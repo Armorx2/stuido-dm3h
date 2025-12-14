@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>قوانين السيرفر</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.container {
+    background: #020617;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    display: none;
+}
+
+.rule {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.num {
+    width: 40px;
+    height: 40px;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+.text {
+    flex: 1;
+    height: 40px;
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+.checkbox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.send {
+    margin-top: 20px;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+
+<!-- زر البداية -->
+<button id="startBtn">القوانين</button>
+
+<!-- صفحة القوانين -->
+<div class="container" id="rulesBox">
+
+    <h2 style="text-align:center;">قوانين السيرفر</h2>
+
+    <!-- القوانين 1 إلى 14 -->
+    <div id="rules"></div>
+
+    <!-- الموافقة -->
+    <div class="checkbox">
+        <input type="checkbox" id="agree">
+        <label for="agree">أوافق على الشروط والأحكام</label>
+    </div>
+
+    <!-- زر إرسال -->
+    <button class="send" id="sendBtn">إرسال</button>
+</div>
+
+<script>
+// إنشاء
