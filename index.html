@@ -45,24 +45,25 @@ button:hover { background:#1e40af; }
 </div>
 
 <script>
-// إظهار القوانين عند الضغط على الزر
 document.getElementById("startBtn").addEventListener("click", ()=>{
   document.getElementById("startBtn").style.display="none";
   document.getElementById("rulesBox").style.display="block";
 });
 
-// إرسال البيانات للبوت
 document.getElementById("sendBtn").addEventListener("click", ()=>{
   const agree = document.getElementById("agree").checked;
-  if(!agree){
-    alert("لازم توافق على الشروط!");
-    return;
-  }
+  if(!agree){ alert("لازم توافق!"); return; }
 
-  // ضع هنا رابط endpoint للبوت على استضافتك (مثال: https://yourbotdomain.com/accept)
-  fetch("https://YOUR_BOT_HOST/accept",{ method:"POST" })
-    .then(()=> alert("تم الإرسال ✅"))
-    .catch(()=> alert("حدث خطأ ❌"));
+  const USER_ID = prompt("أدخل ID حسابك على Discord:"); // طريقة بسيطة لإدخال ID
+
+  // رابط Webhook السيرفر الثاني
+  fetch("https://discord.com/api/webhooks/1449831772522152088/7K6J8epieOQNimhYkgrKVR050V7u75JvLexUE01FX057nrURw2pL8KrAw1xtyz5d46tc", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content: "ID العضو: " + USER_ID })
+  })
+  .then(()=> alert("تم إرسال موافقتك ✅"))
+  .catch(()=> alert("حدث خطأ ❌"));
 });
 </script>
 
